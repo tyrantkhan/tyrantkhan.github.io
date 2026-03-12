@@ -100,20 +100,54 @@ const activeIndex = ref(milestones.length - 1)
         The path so far
       </h2>
 
-      <!-- Horizontal timeline -->
-      <div class="relative mb-12">
-        <!-- Line -->
-        <div class="absolute top-5 left-0 right-0 h-px bg-border" />
+      <!-- Mobile: all cards stacked -->
+      <div class="lg:hidden flex flex-col gap-4">
+        <div
+          v-for="(m, i) in milestones"
+          :key="'mobile-' + i"
+          class="p-6 bg-card border border-border rounded-2xl flex gap-4 items-start"
+        >
+          <div
+            class="w-11 h-11 shrink-0 rounded-full flex items-center justify-center overflow-hidden border-2 border-border"
+          >
+            <img
+              :src="m.logo"
+              :alt="m.company + ' logo'"
+              class="w-full h-full object-contain"
+              :class="[
+                m.logoPad === true ? 'p-1.5 bg-white' : '',
+                m.logoPad === 'sm' ? 'p-0.5 bg-white' : '',
+              ]"
+            />
+          </div>
+          <div class="flex-1 min-w-0">
+            <h3 class="font-serif text-lg font-bold tracking-tight">{{ m.role }}</h3>
+            <p class="text-muted font-medium text-sm">{{ m.company }}</p>
+            <div class="flex items-center gap-2 mt-1 mb-2">
+              <span class="text-xs text-muted">{{ m.location }}</span>
+              <span class="text-xs text-accent font-semibold">{{ m.period }}</span>
+              <span
+                v-if="m.current"
+                class="px-2 py-0.5 bg-accent/10 text-accent text-[0.6rem] font-bold uppercase tracking-wider rounded-full"
+              >
+                Current
+              </span>
+            </div>
+            <p class="text-muted text-sm leading-relaxed">{{ m.summary }}</p>
+          </div>
+        </div>
+      </div>
 
-        <!-- Nodes -->
+      <!-- Desktop: horizontal timeline with interactive nodes -->
+      <div class="hidden lg:block relative mb-12">
+        <div class="absolute top-5 left-0 right-0 h-px bg-border" />
         <div class="relative flex justify-between">
           <button
             v-for="(m, i) in milestones"
             :key="i"
-            class="group relative flex flex-col items-center cursor-pointer bg-transparent border-none p-0 outline-none"
+            class="group relative flex flex-col items-center cursor-pointer bg-transparent border-none p-0 outline-none text-center"
             @click="activeIndex = i"
           >
-            <!-- Logo circle -->
             <div
               class="w-11 h-11 rounded-full flex items-center justify-center transition-all duration-300 z-10 overflow-hidden"
               :class="[activeIndex === i
@@ -133,17 +167,14 @@ const activeIndex = ref(milestones.length - 1)
                 ]"
               />
             </div>
-
-            <!-- Year -->
             <span
               class="mt-2.5 text-sm font-semibold transition-colors duration-300"
               :class="activeIndex === i ? 'text-accent' : 'text-muted group-hover:text-dark'"
             >
               {{ m.year }}
             </span>
-            <!-- Company (desktop) -->
             <span
-              class="hidden md:block text-[0.7rem] transition-colors duration-300 mt-0.5 max-w-[100px] text-center leading-tight"
+              class="text-[0.7rem] transition-colors duration-300 mt-0.5 max-w-[100px] text-center leading-tight"
               :class="activeIndex === i ? 'text-dark' : 'text-muted/50'"
             >
               {{ m.company }}
@@ -152,16 +183,16 @@ const activeIndex = ref(milestones.length - 1)
         </div>
       </div>
 
-      <!-- Detail card -->
-      <div class="relative overflow-hidden">
+      <!-- Desktop: detail card below timeline -->
+      <div class="hidden lg:block relative overflow-hidden">
         <TransitionGroup name="card">
           <div
             v-for="(m, i) in milestones"
             v-show="activeIndex === i"
-            :key="i"
-            class="p-8 md:p-10 bg-card border border-border rounded-2xl"
+            :key="'desktop-' + i"
+            class="p-10 bg-card border border-border rounded-2xl"
           >
-            <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+            <div class="flex flex-row items-start justify-between gap-4 mb-4">
               <div>
                 <h3 class="font-serif text-2xl font-bold tracking-tight">{{ m.role }}</h3>
                 <p class="text-muted font-medium">{{ m.company }}</p>

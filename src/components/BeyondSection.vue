@@ -10,11 +10,11 @@ const activities = ['Eating Ice Cream', 'Cycling', 'Hiking', 'Running', 'Reading
         When I'm offline
       </h2>
 
-      <div class="flex flex-wrap justify-center gap-3">
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-[480px] mx-auto">
         <span
           v-for="activity in activities"
           :key="activity"
-          class="px-4 py-1.5 bg-card border border-border rounded-full text-sm text-muted font-medium hover:-translate-y-0.5 transition-transform duration-300"
+          class="px-4 py-1.5 bg-card border border-border rounded-full text-sm text-muted font-medium text-center hover:-translate-y-0.5 transition-transform duration-300"
         >
           {{ activity }}
         </span>
