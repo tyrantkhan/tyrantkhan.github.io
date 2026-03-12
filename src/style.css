@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --color-accent: #2ABFBF;
+  --color-accent-light: #3DD8D8;
+  --color-warm: #E8654A;
+  --color-gold: #D4A843;
+  --color-muted: #7A7572;
+  --color-bg: #F5F0EC;
+  --color-bg-alt: #EDE7E2;
+  --color-card: #ffffff;
+  --color-border: #DDD6D0;
+  --color-dark: #1E1B18;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes drift {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(-2%, 2%) rotate(1deg); }
+}
+
+.logo-spin.spinning {
+  animation: spinSlow 3s linear infinite;
+  transform: none;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(var(--spin-start, 0deg)); }
+  to { transform: rotate(calc(var(--spin-start, 0deg) + 360deg)); }
+}
+
+@keyframes scrollDown {
+  0% { top: -100%; }
+  50% { top: 100%; }
+  100% { top: 100%; }
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: #1E1B18 !important;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  .boring {
+    font-family: 'Inter', system-ui, sans-serif !important;
+    --color-accent: #1E1B18;
+    --color-muted: #444;
+    --color-bg-alt: #f5f5f5;
+  }
+
+  @page {
+    margin: 0.6in;
+    size: letter;
+  }
+}

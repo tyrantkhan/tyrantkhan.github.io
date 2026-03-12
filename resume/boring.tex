@@ -1,0 +1,96 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[margin=0.65in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fontspec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\setmainfont{Inter}[
+  Path=fonts/,
+  UprightFont=Inter-Regular.ttf,
+  BoldFont=Inter-Bold.ttf,
+  ItalicFont=Inter-Italic.ttf,
+  BoldItalicFont=Inter-BoldItalic.ttf,
+]
+
+\hypersetup{colorlinks=true,urlcolor=black}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Section formatting — bold uppercase with rule, matching the HTML boring mode
+\titleformat{\section}{\fontsize{10}{12}\selectfont\bfseries\uppercase}{}{0em}{}[\vspace{1pt}\titlerule]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+% Compact lists
+\setlist[itemize]{nosep, leftmargin=1.5em, label=---}
+
+\begin{document}
+
+% ── HEADER ──
+\begin{center}
+  {\fontsize{22}{26}\selectfont\bfseries Haris Khan}\\[4pt]
+  {\small\color[HTML]{7A7572} hello@onekhan.com \quad·\quad New York, NY \quad·\quad \href{https://www.linkedin.com/in/tyrantkhan/}{LinkedIn}}
+\end{center}
+
+% ── EXPERIENCE ──
+\section{Relevant Experience}
+
+\textbf{Staff Software Engineer, Traackr} \hfill {\small 2020 --- Present}\\
+{\small New York, NY}
+\begin{itemize}
+  \item Supported a 10-fold growth of creators in the database by migrating a monolithic content tracker to a microservices architecture spanning 7 social platforms, deploying Kafka (MSK) via Terraform to replace RabbitMQ for message replayability and pipeline resilience
+  \item Delivered Benchmark v2 analytics end-to-end --- VIT scoring algorithm, Boosted Content, Influencer Tier segmentation, and GraphQL APIs serving enterprise brands including L'Or\'{e}al and Coty, built as a Vue.js dashboard
+  \item Built the Facebook, Instagram, and Twitch OAuth integrations and designed a reusable auth pattern adopted across all third-party platform connections
+  \item Founded the Developer Experience platform --- Go CLI with self-updating binaries, Kubernetes API service, CI/CD pipelines, and AI-assisted code review --- standardizing developer workflows org-wide
+  \item Delivered an AI Content Insights product from R\&D to production --- transcript ingestion pipeline, bulk analysis API, and Vue.js frontend enabling AI-powered content analysis at scale
+  \item Routinely picked up frontend implementation (Vue.js) to unblock delivery when bandwidth was tight rather than letting work stall
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Principal Software Engineer, ASICS Digital} \hfill {\small 2018 --- 2020}\\
+{\small Boston, MA}
+\begin{itemize}
+  \item Technical lead for all infrastructure and backend architecture of the OneASICS Identity Management / SSO platform
+  \item Migrated over 50 million users from Runkeeper to OneASICS, developing APIs to support the transition
+  \item Created a microservice architecture for all future ASICS API services with PWA frontend support
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Lead Engineer, Innio} \hfill {\small 2015 --- 2018}\\
+{\small New York, NY}
+\begin{itemize}
+  \item Architected and built the web-based subscription and payments management application
+  \item Rebuilt the SSO platform from CAS to OAuth
+\end{itemize}
+
+\vspace{4pt}
+\textbf{Engineer II, Cisco Systems} \hfill {\small 2011 --- 2013}\\
+{\small San Jose, CA}
+\begin{itemize}
+  \item Shipped the Cross-OS Library --- a translation layer API across five Cisco-supported operating systems
+  \item Developed Network, Utility, and Data Structure APIs
+  \item Updated Interface Manager APIs to support write operations
+\end{itemize}
+
+% ── SKILLS ──
+\section{Skills}
+
+\textbf{Exceptional:} Kotlin / Java / Go, AWS / Terraform / Docker, Kafka / Event-Driven Architecture, API Development, OAuth \& Third-Party Integrations\\
+\textbf{Strong:} Vue.js / Frontend Development, CI/CD (Jenkins, GitHub Actions), MongoDB, Elasticsearch, AI/ML Integration (LLM pipelines, AI-assisted code review)\\
+\textbf{Familiar:} Python / PHP / Ruby, API Documentation, K8s / EKS, Databricks, Airflow
+
+% ── EDUCATION ──
+\section{Education}
+
+\textbf{Rensselaer Polytechnic Institute} \hfill {\small Graduated May 2011}\\
+{\small Bachelor of Computer and Systems Engineering \quad·\quad Troy, NY}\\
+{\small Honors: Phalanx Honor Society}
+
+% ── OPEN SOURCE ──
+\section{Open Source}
+
+Maintainer of Concerto Digital Signage · Creator of GoldSplit (Go/Svelte) · Creator of Bitbucket CLI (Go)
+
+\end{document}

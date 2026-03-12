@@ -1,0 +1,3 @@
+[tools]
+"github:tectonic-typesetting/tectonic" = "latest"
+node = "23"
