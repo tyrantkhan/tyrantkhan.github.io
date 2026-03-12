@@ -43,9 +43,10 @@
           class="text-lg text-muted max-w-[480px] mb-10 leading-relaxed opacity-0"
           style="animation: fadeUp 0.8s ease forwards 0.6s"
         >
-          Over a decade building systems that scale — from cross-platform libraries at Cisco
-          to migrating 50 million users at ASICS. I care about clean APIs, solid infrastructure,
-          and shipping things that matter.
+          Over a decade building systems that scale — from a cross-platform library spanning
+          5 operating systems at Cisco, to migrating 50 million users at ASICS, to scaling
+          influencer tracking tenfold through event-driven architecture at Traackr. I care
+          about clean APIs, solid infrastructure, and shipping things that matter.
         </p>
 
         <div
