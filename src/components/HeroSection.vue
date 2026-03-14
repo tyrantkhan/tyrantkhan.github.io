@@ -54,13 +54,13 @@
         <div class="flex gap-4 flex-wrap">
           <a
             href="#contact"
-            class="inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold tracking-wide rounded-full bg-dark text-white no-underline hover:bg-accent hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(42,191,191,0.25)] transition-all duration-300"
+            class="inline-flex items-center justify-center gap-2 px-7 py-3 text-sm font-semibold tracking-wide rounded-full bg-dark text-white no-underline hover:bg-accent hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(42,191,191,0.25)] transition-all duration-300 flex-1 min-w-[160px] sm:flex-none"
           >
             Get in touch
           </a>
           <a
             href="#journey"
-            class="inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold tracking-wide rounded-full border-[1.5px] border-border text-dark no-underline hover:border-accent hover:text-accent hover:-translate-y-0.5 transition-all duration-300"
+            class="inline-flex items-center justify-center gap-2 px-7 py-3 text-sm font-semibold tracking-wide rounded-full border-[1.5px] border-border text-dark no-underline hover:border-accent hover:text-accent hover:-translate-y-0.5 transition-all duration-300 flex-1 min-w-[160px] sm:flex-none"
           >
             View my journey
           </a>
