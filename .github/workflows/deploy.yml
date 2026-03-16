@@ -20,14 +20,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: jdx/mise-action@v2
       - run: npm ci
-      - name: Build LaTeX resumes
-        run: |
-          cd resume
-          tectonic boring.tex
-          tectonic styled.tex
-          cp boring.pdf ../public/Haris_Khan_Resume.pdf
-          cp styled.pdf ../public/Haris_Khan_Resume_Styled.pdf
+      - run: npx playwright install --with-deps chromium
       - run: npm run build
+      - run: npm run generate:pdf
       - run: cp dist/index.html dist/404.html
       - uses: actions/upload-pages-artifact@v3
         with:

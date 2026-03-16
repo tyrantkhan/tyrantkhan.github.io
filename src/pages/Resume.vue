@@ -1,9 +1,10 @@
 <script setup>
 import { ref, computed } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
 
 const router = useRouter()
-const boringMode = ref(false)
+const route = useRoute()
+const boringMode = ref(route.query.mode === 'boring')
 
 const pdfUrl = computed(() =>
   boringMode.value ? '/Haris_Khan_Resume.pdf' : '/Haris_Khan_Resume_Styled.pdf'
@@ -71,7 +72,7 @@ const skills = {
 
 <template>
   <!-- Controls -->
-  <div class="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-xl border-b border-border">
+  <div class="fixed top-0 left-0 right-0 z-50 bg-bg/90 backdrop-blur-xl border-b border-border print:hidden">
     <div class="max-w-[900px] mx-auto px-8 py-3 flex items-center justify-between">
       <button
         @click="router.push('/')"
@@ -101,7 +102,7 @@ const skills = {
 
   <!-- Resume content -->
   <div
-    class="max-w-[900px] mx-auto px-8 pt-24 pb-16"
+    class="max-w-[900px] mx-auto px-8 pt-24 pb-16 print:pt-0"
     :class="boringMode ? 'boring' : ''"
   >
     <!-- Header -->
