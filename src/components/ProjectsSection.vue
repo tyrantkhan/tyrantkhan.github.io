@@ -13,6 +13,14 @@ const projects = [
     url: 'https://github.com/concerto/concerto',
   },
   {
+    name: 'sift',
+    desc: 'A terminal review queue for coding agents. Claude, Codex and others hand over their findings on a plan, spec or code; you approve, tweak, reject or discuss each one, and the agent applies exactly what you decided.',
+    icon: 'filter',
+    iconColor: 'bg-violet-500/10 text-violet-500',
+    langs: [{ name: 'Go', color: 'bg-[#00ADD8]' }],
+    url: 'https://github.com/tyrantkhan/sift',
+  },
+  {
     name: 'GoldSplit',
     desc: 'A lightweight, cross-platform speedrun timer built with Wails. Split comparisons, sum of best, hotkey customization, and always-on-top mode — everything a speedrunner needs, nothing they don\'t.',
     icon: 'timer',
@@ -39,7 +47,7 @@ const projects = [
         Things I've built
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div
           v-for="(project, i) in projects"
           :key="i"
@@ -55,6 +63,8 @@ const projects = [
               <svg v-if="project.icon === 'timer'" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
               <!-- Terminal -->
               <svg v-if="project.icon === 'terminal'" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+              <!-- Filter -->
+              <svg v-if="project.icon === 'filter'" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
               <!-- Monitor -->
               <svg v-if="project.icon === 'monitor'" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
