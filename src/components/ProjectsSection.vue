@@ -13,7 +13,7 @@ const projects = [
     url: 'https://github.com/concerto/concerto',
   },
   {
-    name: 'sift',
+    name: 'Sift',
     desc: 'A terminal review queue for coding agents. Claude, Codex and others hand over their findings on a plan, spec or code; you approve, tweak, reject or discuss each one, and the agent applies exactly what you decided.',
     icon: 'filter',
     iconColor: 'bg-violet-500/10 text-violet-500',
